@@ -27,4 +27,4 @@ module Slack
   end
 end
 
-Rack::Handler::WEBrick.run Slack::TeamChat.new
+run Slack::TeamChat.new
