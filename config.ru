@@ -21,6 +21,7 @@ module Slack
       hash = { "text" => "https://teamch.at/#{room}" }
 
       res.write hash.to_json
+      res["Content-Type"] = "application/json"
       res.status = 200
       res.finish
     end
