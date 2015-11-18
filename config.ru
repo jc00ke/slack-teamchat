@@ -10,7 +10,7 @@ module Slack
       req = Rack::Request.new(env)
       res = Rack::Response.new
 
-      room = if req["text"].nil?
+      room = if req["text"].nil? || req["text"].length == 0
                [:ingverb, :adjective, :noun].map { |m|
                  Faker::Hacker.send(m)
                }.join("-").gsub(" ", "-")
